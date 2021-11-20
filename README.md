@@ -1,4 +1,4 @@
-## Spring Notepad
+## Spring Notepad :spiral_notepad:
 - using: MySQL, Hibernate, MVC, Thymeleaf
 
 ##### Configuration in application.properties:
@@ -9,7 +9,7 @@
 
 ***
 ### Tydzień 8
-#### Zadanie 2 :thermometer: :sun_behind_small_cloud:
+#### Zadanie 2 
 - [X] Napisz Notatnik online – aplikacje z interfejsem graficznym, która umożliwia na tworzenie notatek, zapisywanie ich w bazie danych, późniejszą edycję, oraz wyświetlanie.
 ***
 ##### screenshots
