@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Notepad</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+<h2 style="text-align: center; margin-top: 20px; margin-bottom: 20px"><b>Notepad</b></h2>
+
+<table class="table table-striped" style="margin-left:auto; margin-right: auto; width: 50%; text-align: left">
+    <tbody>
+    <tr style="vertical-align: middle; background-color: darkgray">
+        <form th:action="@{add}" th:object="${newNote}" method="post">
+            <td th:width="150px">
+                <img th:width="90px" style="margin: 20px" th:src="@{/img/notepad.png}"/>
+            </td>
+            <td>
+                <input style="width: 95%; margin-bottom: 20px; margin-top: 20px" type="text" th:field="*{title}" th:placeholder="Title">
+                <textarea style="width: 95%; margin-bottom: 20px" rows="5" name="text" th:field="*{description}" th:placeholder="Description"></textarea>
+
+                <p style="text-align: right; margin-right: 25px">
+                    <input type="submit" class="btn btn-outline-dark" value="Add note">
+                </p>
+            </td>
+        </form>
+    </tr>
+
+    <tr th:each="notes: ${notepadNotes}" style="vertical-align: middle">
+        <td th:width="150px">
+            <img th:width="80px" style="margin: 30px" th:src="@{/img/note.png}"/>
+            <p style="text-align: center" th:text="${notes.getDate()}"></p>
+        </td>
+        <td>
+            <h4 th:text="${notes.getTitle()}"></h4>
+            <p th:text="${notes.getDescription()}"></p>
+            <p style="text-align: right">
+                <a th:href="@{'delete/' + ${notes.getId()}}"><button type="button" class="btn btn-outline-dark">Delete</button></a>&nbsp;
+                <a th:href="@{'edit/' + ${notes.getId()}}"><button type="button" class="btn btn-outline-dark">Edit</button></a>
+            </p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

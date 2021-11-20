@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+<h2 style="text-align: center; margin-top: 20px; margin-bottom: 20px"><b>Notepad</b></h2>
+
+<table class="table" style="margin-left:auto; margin-right: auto; width: 50%; text-align: left">
+    <tbody>
+    <tr style="vertical-align: middle; background-color: dimgrey">
+        <form th:action="@{/modify}" th:object="${note2Edit}" method="post">
+            <td th:width="150px">
+                <img th:width="90px" style="margin: 20px" th:src="@{/img/notepad.png}"/>
+                <p style="text-align: center" th:text="${note2Edit.getDate()}"></p>
+                <input type="hidden" th:field="*{id}">
+            </td>
+            <td>
+                <h3 style="text-align: left;"><b>Edit note</b></h3>
+                <input style="width: 95%; margin-bottom: 20px; margin-top: 20px" type="text" th:field="*{title}"
+                       th:placeholder="Title">
+                <textarea style="width: 95%; margin-bottom: 20px" rows="5" name="text" th:field="*{description}"
+                          th:placeholder="Description"></textarea>
+
+                <p style="text-align: right; margin-right: 25px">
+                    <input type="submit" class="btn btn-dark" value="Save"> <a th:href="@{/}">
+                    <button type="button" class="btn btn-outline-dark">Cancel</button>
+                </a>
+                </p>
+            </td>
+        </form>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
