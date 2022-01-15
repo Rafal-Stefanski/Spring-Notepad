@@ -8,9 +8,8 @@
 - http://localhost:8080
 
 ***
-### Tydzień 8
-#### Zadanie 2 
-- [X] Napisz Notatnik online – aplikacje z interfejsem graficznym, która umożliwia na tworzenie notatek, zapisywanie ich w bazie danych, późniejszą edycję, oraz wyświetlanie.
+Description
+- [X] Online Notepad – App with GUI. Allows creating new notes, saving it to database, edditing nad view.
 ***
 ##### screenshots
 ![screen shot](https://github.com/Rafal-Stefanski/Spring-Notepad/blob/master/src/main/resources/static/screenshot_01.png)
