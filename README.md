@@ -10,7 +10,7 @@
 
 ***
 #### Description
-Online Notepad – App with GUI. Allows creating new notes, saving it to database, edditing nad view.
+Online Notepad – App with GUI. Allows creating new notes, saving it to database, view and edit.
 ***
 #### Unit tests with Mockito
 ![screen shot](https://github.com/Rafal-Stefanski/Spring-Notepad/blob/master/src/main/resources/static/screenshot_test_01.png)
